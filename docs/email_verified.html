@@ -1,17 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Compte vérifié</title>
-<style>
-  body { font-family: sans-serif; text-align: center; padding: 50px; background: #FBFAEF; color: #7E976B; }
-  h1 { font-size: 28px; }
-  p { font-size: 18px; margin-top: 20px; }
-  a { color: #7E976B; text-decoration: underline; font-weight: bold; }
-</style>
+  <meta charset="UTF-8">
+  <title>Compte vérifié - BOOKED</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FBFAEF;
+      color: #2F2F2F;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #7E976B;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #7E976B;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .link {
+      display: block;
+      margin-top: 10px;
+      color: #7E976B;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+
+    .small {
+      margin-top: 25px;
+      font-size: 13px;
+      color: grey;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Votre compte a bien été vérifié !</h1>
-  <p>Rendez-vous sur <a href="https://booked.app">BOOKED</a> pour agrandir votre bibliothèque 📚</p>
+  <div class="container">
+    <h1>Votre compte a bien été vérifié 🎉</h1>
+
+    <p>
+      Bienvenue sur <strong>BOOKED</strong> 📚<br>
+      Il est temps d’agrandir votre bibliothèque !
+    </p>
+
+    <!-- Bouton principal -->
+    <a class="btn" href="io.supabase.booked://login-callback">
+      Ouvrir l'application
+    </a>
+
+    <!-- Fallback -->
+    <a class="link" href="#">
+      Si le bouton ne fonctionne pas, ouvrez l'application manuellement
+    </a>
+
+    <p class="small">
+      Sur ordinateur ? Téléchargez l'application BOOKED pour continuer.
+    </p>
+  </div>
+
+  <!-- Auto redirect mobile (optionnel) -->
+  <script>
+    // Essaie d'ouvrir l'app automatiquement après 1 seconde
+    setTimeout(function() {
+      window.location.href = "io.supabase.booked://login-callback";
+    }, 1000);
+  </script>
 </body>
 </html>
